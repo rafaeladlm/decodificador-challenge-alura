@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    
+    <head> 
+        <meta charset="UTF-8">
+        <title>Decodificador de Texto</title>
+        <link rel = "stylesheet" href="reset.css">
+		<link rel = "stylesheet" href="style.css">
+
+    </head>
+
+    <body> 
+        <header> 
+            <h1> <img src = "logo_alura.svg" > </h1>
+
+        </header>
+
+        <main> 
+
+            <div class="container">   
+
+                <div class="containerUsuario"> 
+                    
+                    <div class="textoUsuarioWrapper">
+                        <textarea id="textoUsuario" placeholder="Digite seu texto"></textarea>
+                    </div>
+
+                    <div class="rodape-containerUsuario">
+                        <p>* Apenas letras minúsculas e sem acento</p>
+                        <button id="criptografar-botao" class="botao">Criptografar</button>
+                        <button id="descriptografar-botao" class="botao">Descriptografar</button>
+                    </div>
+                </div>
+                
+                <div class="containerRespostas"> 
+                    
+                    <div id="resultadoInput" class="resultadoTextoUsuario" >
+                        
+                        <textarea id="resultadoTextArea" readonly ></textarea>
+                        
+                        <div class="rodape-containerRespostas"> 
+                            <button id="copiar-botao" class="botao">Copiar</button>
+                        </div>
+
+                    </div>
+
+
+                    <div id="input-vazio" class="resultadoTextoUsuario"> 
+                            
+                        <img src="imagem-mensagem-nao-encontrada.png">
+                        <div class="rodape-containerRespostas"> 
+                            <h2> Nenhuma mensagem encontrada </h2>
+                            <h6> Digite um texto que você deseja criptografar ou descriptografar</h6>
+                        </div>              
+
+                    </div>
+
+                </div>
+
+            </div> 
+        </main>
+
+       
+    </body>
+
+</html>
+
+<script>
+
+    
+    function criptografar () {
+
+        
+        const textoDigitado = document.querySelector ("#textoUsuario");
+
+        if (textoDigitado.value !="") { 
+        let textoCriptografado = textoDigitado.value.replaceAll('e','enter');
+
+        textoCriptografado = textoCriptografado.replaceAll ('i','imes');
+
+        textoCriptografado = textoCriptografado.replaceAll ('a', 'ai');
+
+        textoCriptografado = textoCriptografado.replaceAll ('o', 'ober');
+
+        textoCriptografado = textoCriptografado.replaceAll ('u', 'ufat');
+
+           
+      
+        document.getElementById("input-vazio").style.display = "none";
+        document.getElementById("resultadoInput").style.display = "block";
+
+        const resultadoInput = document.getElementById('resultadoTextArea');
+
+        resultadoInput.value = textoCriptografado;
+
+        }
+        
+        else {
+            document.getElementById("input-vazio").style.display = "block";
+            document.getElementById("resultadoInput").style.display = "none";
+
+
+        }
+
+    }
+
+    function descriptografar () {
+
+        const textoDigitado = document.querySelector ("#textoUsuario");
+
+        let textoDescriptografado = textoDigitado.value.replaceAll('enter','e');
+
+        textoDescriptografado = textoDescriptografado.replaceAll ('imes','i');
+
+        textoDescriptografado = textoDescriptografado.replaceAll ('ai', 'a');
+
+        textoDescriptografado = textoDescriptografado.replaceAll ('ober', 'o');
+
+        textoDescriptografado = textoDescriptografado.replaceAll ('ufat', 'u');
+
+                  
+      
+        document.getElementById("input-vazio").style.display = "none"; 
+        document.getElementById("resultadoInput").style.display = "block";
+
+        const resultadoInput = document.getElementById('resultadoTextArea');
+        resultadoInput.value = textoDescriptografado;
+           
+    
+    }
+
+
+    function copiarTexto () {
+
+        
+        let textoCopiado = document.getElementById ("resultadoTextArea");
+        textoCopiado.select ();
+        textoCopiado.setSelectionRange (0, 99999);
+        document.execCommand ("copy");
+        alert ("O texto é: " + textoCopiado.value);
+
+
+    }
+
+    let buttonCriptografar = document.getElementById ("criptografar-botao");
+    let buttonDescriptografar = document.querySelector ("#descriptografar-botao");
+    let buttonCopiar = document.querySelector ("#copiar-botao");
+
+
+    buttonCriptografar.onclick = criptografar;
+    buttonDescriptografar.onclick = descriptografar;
+    buttonCopiar.onclick = copiarTexto;
+
+
+
+</script>

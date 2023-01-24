@@ -1,0 +1,137 @@
+
+body {
+	font-size: 'Inter';
+	background:#F3F5FC ;
+	width: 100%;
+	height: 100vh;
+}
+
+header {
+	padding: 2% 0px 0px 1%;
+}
+
+.container {
+
+	width: 100%;
+	display: inline-block;
+	padding: 2% 0px 0px 1%;
+}
+
+.containerUsuario {
+
+	width: 70%;
+	float: left;
+	
+}
+.textoUsuarioWrapper{
+
+	height: 65vh;
+}
+
+#textoUsuario {
+
+	border: none;
+	background: none;
+	height: 100%;
+	font-size: 32px;
+	color:#0A3871;
+	display: block;
+	width: 90%;
+	
+}
+::placeholder {
+	
+	color:#0A3871;
+	text-align: left;
+
+
+}
+
+.botao { 
+	width: 300px;
+	padding: 15px 0px;
+	background:  #F3F5FC;
+	color: #0A3871;
+	font-weight: 400;
+	font-size: 16px;
+	border: 1px solid #0A3871;
+	border-radius: 24px ;
+	transition: 0.5s all;
+	cursor: pointer;
+	margin: 10px;
+}
+
+#copiar-botao {
+
+	margin: 34px 0px 0px 0px;
+}
+
+.botao:hover {
+
+	background: #0A3871;
+	color: white;
+
+}
+.rodape-containerUsuario {
+
+	padding: 2% 0px 0px 0px;
+
+}
+
+
+
+.containerRespostas {
+
+	width: 30%;
+	float: right;
+	height: 80vh;
+}
+
+.resultadoTextoUsuario {
+
+	text-align: center;
+	width: 90%;
+	height: 100%;
+	background: #FFFFFF;
+	box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+	border-radius: 32px;
+
+}
+.resultadoTextoUsuario img {
+
+	margin: 30% 0px 0px 0px;
+
+}
+#resultadoInput {
+
+	display: none;
+	
+	
+
+}
+
+#resultadoTextArea {
+
+	border: none;
+	background: none;
+	font-size: 24px;
+	color: #495057;
+	width: 100%;
+	height: 65vh;
+	
+}
+
+.rodape-containerRespostas h2 {
+
+	font-size: 24px;
+    font-weight: 700;
+    color: #343A40;
+
+}
+.rodape-containerRespostas h6 {
+
+	font-size: 16px;
+    font-weight: 400;
+    color: #495057;
+	padding: 2% 0px 0px 0px;
+}
